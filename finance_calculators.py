@@ -15,7 +15,7 @@ def investment_calculator():
     - Prints the total amount after the investment period.
     """
 
-    print("\nInvestment Calculator")
+    print("\nInvestment Calculator\n")
     try:
         P = float(input("Enter the amount of money you are depositing: "))
         r = float(input("Enter the interest rate (as a percentage): ")) / 100
@@ -52,7 +52,7 @@ def bond_calculator():
     - Prints the monthly repayment amount for the bond.
     """
 
-    print("\nBond Repayment Calculator")
+    print("\nBond Repayment Calculator\n")
     try:
         P = float(input("Enter the present value of the house: "))
         i = float(input("Enter the annual interest rate: ")) / 100 / 12
@@ -76,22 +76,24 @@ def finance_calculators():
     between the investment and bond calculators or exit the program.
     """
 
-    print("Welcome to the Finance Calculator!")
+    print("\n-------------------------------------------------------------")
+    print("            Welcome to the Finance Calculator!")
+    print("-------------------------------------------------------------")
     
     while True:
-        print("\nChoose either 'investment' or 'bond'from the menu below to proceed:")
+        print("\nChoose either 'investment' or 'bond' from the menu below to proceed:\n")
         print("1. investment      -  to calculate the amount of interest you'll earn on interest")
         print("2. bond            -  to calculate the amount you'll have to pay on a home loan")
         print("3. Exit")
         
-        choice = input("Enter your choice (1/2/3): ").strip()
+        choice = input("\nEnter your choice (1/2/3) or ('investment'/'bond'/'exit'): ").strip()
         
         if choice == "1" or choice.lower() == "investment":
             investment_calculator()
         elif choice == "2" or choice.lower() == "bond":
             bond_calculator()
         elif choice == "3" or choice.lower() == "exit":
-            print("Exiting Finance Calculator. Goodbye!")
+            print("\nExiting Finance Calculator. Goodbye!\n")
             break
         else:
             print("Invalid choice. Please enter 1, 2, or 3.")
