@@ -11,7 +11,7 @@
  ## Getting Started
  To use the Finance Calculator application, follow these steps:
 
- 1. Run the finance_calculators.py file using Python.
+ 1. Run the finance_calculators.py file using Python.  
       ```python finance_calculators.py```
  2. Upon running the program, you will be presented with a menu where you can choose between two calculators:
 
