@@ -31,7 +31,7 @@
     • Type of interest (simple or compound): compound 
 
  • Output:  
-    ```The total amount after 5 years at an interest rate of 8.0% will be: R 14802.02```
+    ```The total amount after 5 years at an interest rate of 8.0% will be: R 14693.28```
 
  ### Example 2: Bond Repayment Calculator
  Calculate the monthly repayment amount for a home loan:
@@ -43,7 +43,7 @@
     • Number of months to repay: 240
 
 • Output:  
-  ```The monthly repayment amount for the bond will be: R 1504.40```
+  ```The monthly repayment amount for the bond will be: R 1550.60```
 
 ## Notes
 • The program uses Python's math module for mathematical calculations.
