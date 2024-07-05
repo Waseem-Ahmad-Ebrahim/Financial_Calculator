@@ -46,6 +46,6 @@
   ```The monthly repayment amount for the bond will be: R 1550.60```
 
 ## Notes
-• The program uses Python's math module for mathematical calculations.
-• Ensure all inputs are numeric and within reasonable ranges to avoid errors.
+• The program uses Python's math module for mathematical calculations.  
+• Ensure all inputs are numeric and within reasonable ranges to avoid errors.  
 • If you encounter any issues or have questions, feel free to reach out to the program maintainer.
