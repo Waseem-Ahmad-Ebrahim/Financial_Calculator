@@ -1,4 +1,4 @@
-# Financial_Calculator
+# Financial Calculator
  
  ## Overview
  This Python program provides two financial calculators: an investment calculator and a home loan repayment calculator. It allows users to input various financial parameters to calculate either the returns on an investment or the monthly repayment amount for a home loan (bond).
