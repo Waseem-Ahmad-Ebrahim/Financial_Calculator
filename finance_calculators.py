@@ -16,26 +16,63 @@ def investment_calculator():
     """
 
     print("\nInvestment Calculator\n")
-    try:
-        P = float(input("Enter the amount of money you are depositing: "))
-        r = float(input("Enter the interest rate (as a percentage): ")) / 100
-        t = int(input("Enter the number of years you plan on investing for: "))
-        interest = input("Do you want simple or compound interest? ").strip().lower()
+    
+    P = None
+    r = None
+    t = None
+    interest = None
+    
+    while True:
+        if P is None:
+            try:
+                P = float(input("Enter the amount of money you are depositing: "))
+            except ValueError:
+                print("Invalid input. Please enter a valid numeric value.")
+                continue
         
-        if interest == "simple":
-            A = P * (1 + r * t)
-        elif interest == "compound":
-            A = P * math.pow((1 + r), t)
-        else:
-            print("Invalid choice of interest type. Please choose 'simple' or 'compound'.")
-            return
+        if r is None:
+            try:
+                r = float(input("Enter the interest rate (as a percentage): ")) / 100
+            except ValueError:
+                print("Invalid input. Please enter a valid numeric value.")
+                continue
         
-        print(f"\nThe total amount after {t} years at an interest rate of {r*100}% will be: R {A:.2f}")
+        if t is None:
+            try:
+                t = int(input("Enter the number of years you plan on investing for: "))
+                if t == 0:
+                    raise ZeroDivisionError
+            except ValueError:
+                print("Invalid input. Please enter a valid numeric value.")
+                continue
+            except ZeroDivisionError:
+                print("Error: Please enter a non-zero value for the number of years.")
+                continue
         
-    except ValueError:
-        print("Invalid input. Please enter valid numeric values.")
-    except ZeroDivisionError:
-        print("Error: Please enter a non-zero value for the number of years.")
+        if interest is None:
+            interest = input("Do you want simple or compound interest? ").strip().lower()
+            if interest not in ["simple", "compound"]:
+                print("Invalid choice of interest type. Please choose 'simple' or 'compound'.")
+                interest = None
+                continue
+        
+        if P is not None and r is not None and t is not None and interest is not None:
+            try:
+                if interest == "simple":
+                    A = P * (1 + r * t)
+                elif interest == "compound":
+                    A = P * math.pow((1 + r), t)
+                
+                print(f"\nThe total amount after {t} years at an interest rate of {r*100}% will be: R {A:.2f}")
+                break  # Exit the loop if calculations are successful
+            
+            except Exception as e:
+                print(f"An error occurred during calculation: {str(e)}")
+                P = None
+                r = None
+                t = None
+                interest = None
+                continue
 
 
 def bond_calculator():
@@ -53,21 +90,52 @@ def bond_calculator():
     """
 
     print("\nBond Repayment Calculator\n")
-    try:
-        P = float(input("Enter the present value of the house: "))
-        i = float(input("Enter the annual interest rate: ")) / 100 / 12
-        n = int(input("Enter the number of months to repay the bond: "))
+    
+    P = None
+    i = None
+    n = None
+    
+    while True:
+        if P is None:
+            try:
+                P = float(input("Enter the present value of the house: "))
+            except ValueError:
+                print("Invalid input. Please enter a valid numeric value.")
+                continue
         
-        repayment = (i * P) / (1 - math.pow((1 + i), -n))
+        if i is None:
+            try:
+                i = float(input("Enter the annual interest rate: ")) / 100 / 12
+            except ValueError:
+                print("Invalid input. Please enter a valid numeric value.")
+                continue
         
-        print(f"\nThe monthly repayment amount for the bond will be: R {repayment:.2f}")
+        if n is None:
+            try:
+                n = int(input("Enter the number of months to repay the bond: "))
+                if n == 0:
+                    raise ZeroDivisionError
+            except ValueError:
+                print("Invalid input. Please enter a valid numeric value.")
+                continue
+            except ZeroDivisionError:
+                print("Error: Please enter a non-zero value for the number of months.")
+                continue
         
-    except ValueError:
-        print("Invalid input. Please enter valid numeric values.")
-    except ZeroDivisionError:
-        print("Error: Please enter a non-zero value for the number of months.")
-    except:
-        print("An error occurred. Please check your inputs.")
+        # If all inputs are valid, calculate and print the result
+        if P is not None and i is not None and n is not None:
+            try:
+                repayment = (i * P) / (1 - math.pow((1 + i), -n))
+                
+                print(f"\nThe monthly repayment amount for the bond will be: R {repayment:.2f}")
+                break  # Exit the loop if calculations are successful
+            
+            except Exception as e:
+                print(f"An error occurred during calculation: {str(e)}")
+                P = None
+                i = None
+                n = None
+                continue
 
 
 def finance_calculators():
