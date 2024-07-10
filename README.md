@@ -22,7 +22,8 @@
 
  ## Usage Examples
  ### Example 1: Investment Calculator
- Calculate the returns on an investment:
+ Calculate the returns on an investment:  
+
   • Input:
 
     • Principal amount: 10000
@@ -32,6 +33,8 @@
 
  • Output:  
     ```The total amount after 5 years at an interest rate of 8.0% will be: R 14693.28```
+
+![Investment Calculator](screenshots/Capture.JPG)
 
  ### Example 2: Bond Repayment Calculator
  Calculate the monthly repayment amount for a home loan:
@@ -44,6 +47,8 @@
 
 • Output:  
   ```The monthly repayment amount for the bond will be: R 1550.60```
+
+![Bond Calculator](screenshots/Capture2.JPG)
 
 ## Notes
 • The program uses Python's math module for mathematical calculations.  
